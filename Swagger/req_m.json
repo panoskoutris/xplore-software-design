@@ -1,7 +1,7 @@
   "paths": {
     "/user/{id}/role/{role}/story/{story-id}/panel": {
       "get": {
-        "summary": "Defines the user and gets all panels of a story",
+        "summary": "Defines the gamemaster and gets all panels of a story",
         "description": "Enables the gamemaster to browse every panel of the story (Going back and forth through the story panels)",
         "parameters": [
           {
@@ -18,7 +18,7 @@
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["solver", "gamemaster"]
+              "enum": ["gamemaster"]
             }
           },
           {
@@ -33,6 +33,55 @@
         "responses": {
           "200": {
             "description": "All the panels for the given story"
+          },
+          "404": {
+            "description": "Story not found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/story/{story-id}/panel/{panel-id}": {
+      "get": {
+        "summary": "Defines the gamemaster and gets a specific panel of a story",
+        "description": "Allows the gamemaster to retrieve a specific panel of the story by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster"]
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "panel-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The specifc panel for the given story"
           },
           "404": {
             "description": "Story not found"
@@ -71,7 +120,6 @@
             }
           }
         ],
-        "requestBody": {
          "requestBody": {
           "required": true,
           "content": {

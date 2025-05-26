@@ -1,4 +1,3 @@
-{
   "openapi": "3.0.4",
   "info": {
     "title": "Swagger Xplore - OpenAPI 3.0",
@@ -24,3 +23,144 @@
       "description": "Local development server"
     }
   ],
+  "components": {
+  "schemas": {
+    "Gamemaster": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string",
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["gamemaster"]
+        },
+        "exists": {
+          "type": "boolean",
+          "description": "Indicates if the gamemaster account already exists."
+        },
+        "choosen_story": {
+          "type": "Story",
+        },
+        "invited_solvers": {
+          "type": "Solvers",
+          "description": "List of solvers invited by the gamemaster"
+        }
+      },
+      "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited_solvers"],
+    },
+    "Solver": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "name": {
+          "type": "string"
+        },
+        "password": {
+          "type": "string",
+        },
+        "email": {
+          "type": "string",
+          "format": "email"
+        },
+        "role": {
+          "type": "string",
+          "enum": ["solver"]
+        },
+        "exists": {
+          "type": "boolean",
+          "description": "Indicates if the solver account already exists."
+        },
+        "choosen_story": {
+          "type": "Story",
+        },
+        "invited":
+          {
+            "type": "Boolean",
+          },
+        "used_hints": {
+          "type": "integer",
+          "description": "Number of hints used by the solver"
+        }
+        
+      },
+      "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited", "used_hints"],
+    },
+    "Story": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "title": {
+          "type": "string"
+        },
+        "chosen": {
+          "type": "Boolean"
+        },
+        "panels": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Panel"
+          }
+        }
+        "riddles": {
+          "type": "array",
+          "items": {
+            "$ref": "#/components/schemas/Riddle"
+          }
+        }
+      },
+      "required": ["id", "title", "chosen", "panels", "riddles"]
+
+    },
+    "Panel": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "content": {
+          "type": "image",
+        },
+      },
+      "required": ["id", "content"]
+    }
+    "Riddle": {
+      "type": "object",
+      "properties": {
+        "id": {
+          "type": "integer"
+        },
+        "riddle_type": {
+          "type": "string",
+          "enum": ["custom", "default", "database"]
+        },
+        "answered": {
+          "type": "boolean"
+        },
+        "riddle_content": {
+          "type": "string"
+        },
+        "correct_answer": {
+          "type": "string",
+          "description": "The correct answer to the riddle"
+        },
+      },
+      "required": ["id", "riddle_type", "answered", "riddle_content"]
+    }
+
+}
+  }
