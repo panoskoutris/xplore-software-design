@@ -37,7 +37,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Riddle"
+                "$ref": "Riddle"
               }
             }
           }
@@ -87,7 +87,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Answer"
+                  "$ref": "Answer"
                 }
               }
             }
@@ -130,7 +130,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Answer"
+                    "$ref": "Answer"
                   }
                 }
               }
@@ -174,7 +174,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Riddle"
+                    "$ref": "Riddle"
                   }
                 }
               }
