@@ -1,0 +1,190 @@
+{
+  "paths": {
+    "/user/{id}/role/{role}/story/{story-id}/riddle": {
+      "post": {
+        "summary": "Create a custom riddle for a story",
+        "tags": [
+          "Riddle"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Riddle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Riddle created successfully"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/answer/{answer-id}": {
+      "get": {
+        "summary": "Retrieve a specific answer",
+        "tags": [
+          "Answer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          },
+          {
+            "name": "answer-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Answer found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Answer not found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/answer": {
+      "get": {
+        "summary": "Get all answers by solvers",
+        "tags": [
+          "Answer"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of answers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Answer"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No answers found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/riddle": {
+      "get": {
+        "summary": "Get all riddles for the gamemaster",
+        "tags": [
+          "Riddle"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of riddles",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Riddle"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No riddles found"
+          }
+        }
+      }
+    }
+  }
+}
