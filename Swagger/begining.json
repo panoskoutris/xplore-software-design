@@ -1,0 +1,26 @@
+{
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Swagger Xplore - OpenAPI 3.0",
+    "description": "This is a sample API definition for the \"Xplore\" application, developed as part of a university project and based on the OpenAPI 3.0.4 specification.\n\nXplore is an educational storytelling Web Application. Making education fun through interactive learning (inspired by the bestselling graphic novel \"Ποιός σκότωσε τον κ. Χ;\").\n\nIn this version of the API, we follow a design-first approach and aim to cover key features and user stories identified during the early analysis and requirements phase.\n\nThis API enables:\n- The gamemaster to browse every panel of the story (Going back and forth through the story panels)\n- The solver to accept/decline the invitation quest made by the gamemaster\n- The gamemaster to integrate the custom riddle to the story, after the custom riddle is created\n\nOver time, we aim to enhance the functionality and structure of this API to support future extensions and improve usability.\n\nSome useful links:\n- [The Xplore App repository](https://github.com/dimileou/Software-Engineering-Project)\n- [The source API definition for the Xplore App](https://github.com/dimileou/Software-Engineering-Project/tree/main/Swagger)",
+    "termsOfService": "https://swagger.io/terms/",
+    "contact": {
+      "name": "Xplore API Team",
+      "email": "xplore-team@auth.ece.gr"
+    },
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    },
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Learn more about the Swagger & OpenAPI Specification",
+    "url": "https://swagger.io"
+  },
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local development server"
+    }
+  ],
