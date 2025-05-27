@@ -26,6 +26,37 @@
   ],
   "components": {
     "schemas": {
+      "User": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["gamemaster", "solver"]
+          },
+          "exists": {
+            "type": "boolean",
+            "description": "Indicates if the user account already exists."
+          },
+          "choosen_story": {
+            "type": "object",
+            "$ref": "#/components/schemas/Story"
+          }
+        },
+        "required": ["id", "name", "password", "email", "role", "exists"]
+      },
       "Gamemaster": {
         "type": "object",
         "properties": {
@@ -51,7 +82,7 @@
             "description": "Indicates if the gamemaster account already exists."
           },
           "choosen_story": {
-            "type": "#/components/schemas/Story"
+            "$ref": "#/components/schemas/Story"
           },
           "invited_solvers": {
             "type": "array",

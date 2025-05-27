@@ -1,0 +1,678 @@
+  {
+  "openapi": "3.0.4",
+  "info": {
+    "title": "Swagger Xplore - OpenAPI 3.0",
+    "description": "This is a sample API definition for the \"Xplore\" application, developed as part of a university project and based on the OpenAPI 3.0.4 specification.\n\nXplore is an educational storytelling Web Application. Making education fun through interactive learning (inspired by the bestselling graphic novel \"Ποιός σκότωσε τον κ. Χ;\").\n\nIn this version of the API, we follow a design-first approach and aim to cover key features and user stories identified during the early analysis and requirements phase.\n\nThis API enables:\n- The gamemaster to browse every panel of the story (Going back and forth through the story panels)\n- The solver to accept/decline the invitation quest made by the gamemaster\n- The gamemaster to integrate the custom riddle to the story, after the custom riddle is created\n\nOver time, we aim to enhance the functionality and structure of this API to support future extensions and improve usability.\n\nSome useful links:\n- [The Xplore App repository](https://github.com/dimileou/Software-Engineering-Project)\n- [The source API definition for the Xplore App](https://github.com/dimileou/Software-Engineering-Project/tree/main/Swagger)",
+    "termsOfService": "https://swagger.io/terms/",
+    "contact": {
+      "name": "Xplore API Team",
+      "email": "xplore-team@ece.auth.gr"
+    }, 
+    "license": {
+      "name": "Apache 2.0",
+      "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
+    }, 
+    "version": "1.0.0"
+  },
+  "externalDocs": {
+    "description": "Learn more about the Swagger & OpenAPI Specification",
+    "url": "https://swagger.io"
+  }, 
+  "servers": [
+    {
+      "url": "http://localhost:3000/api",
+      "description": "Local development server"
+    }
+  ],
+  "components": {
+    "schemas": {
+      "Gamemaster": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["gamemaster"]
+          },
+          "exists": {
+            "type": "boolean",
+            "description": "Indicates if the gamemaster account already exists."
+          },
+          "choosen_story": {
+            "$ref": "#/components/schemas/Story"
+          },
+          "invited_solvers": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Solver"
+            },
+            "description": "List of solvers invited by the gamemaster"
+          }
+        },
+        "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited_solvers"]
+      },
+      "Solver": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "name": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string",
+            "format": "email"
+          },
+          "role": {
+            "type": "string",
+            "enum": ["solver"]
+          },
+          "exists": {
+            "type": "boolean",
+            "description": "Indicates if the solver account already exists."
+          },
+          "choosen_story": {          
+              "$ref": "#/components/schemas/Story"
+          },
+          "invited": {
+            "type": "boolean"
+          },
+          "used_hints": {
+            "type": "integer",
+            "description": "Number of hints used by the solver"
+          }
+        },
+      "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited", "used_hints"]
+      },
+
+      "Story": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "title": {
+            "type": "string"
+          },
+          "chosen": {
+            "type": "boolean"
+          },
+          "panels": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Panel"
+            }
+          },
+          "riddles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Riddle"
+            }
+          }
+        },
+        "required": ["id", "title", "chosen", "panels", "riddles"]
+      },
+      "Panel": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "content": {
+            "type": "string",
+            "format": "binary"
+          }
+        },
+        "required": ["id", "content"]
+    },
+      "Riddle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer"
+          },
+          "riddle_type": {
+            "type": "string",
+            "enum": ["custom", "default", "database"]
+          },
+          "answered": {
+            "type": "boolean"
+          },
+          "riddle_content": {
+            "type": "string"
+          },
+          "correct_answer": {
+            "type": "string",
+            "description": "The correct answer to the riddle"
+          }
+        },
+        "required": ["id", "riddle_type", "answered", "riddle_content"]
+      },
+      "Answer": {
+        "type": "object",
+        "properties": {
+          "answerId": {
+            "type": "integer"
+          },
+          "riddle": {
+            "$ref": "#/components/schemas/Riddle"
+          },
+          "solver": {
+            "$ref": "#/components/schemas/SolverAccount"
+          },
+          "answerText": {
+            "type": "string"
+          },
+          "isCorrect": {
+            "type": "boolean"
+          }
+        },
+        "required": [
+          "riddle",
+          "solver",
+          "answerText"
+        ]
+      },
+    "paths": {
+    "/user": {
+      "post": {
+        "summary": "Creates a new user",
+        "description": "Allows the creation of a new user account, either as a gamemaster or solver.",
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Gamemaster"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "User created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Gamemaster"
+                }
+              }
+            }
+          },
+          "400": {
+            "description": "Invalid input"
+          }
+        }
+      }
+    },
+
+    "/user/{id}/role/{role}/story/{story-id}/panel": {
+      "get": {
+        "summary": "Defines the gamemaster and gets all panels of a story",
+        "description": "Enables the gamemaster to browse every panel of the story (Going back and forth through the story panels)",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster"]
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "All the panels for the given story"
+          },
+          "404": {
+            "description": "Story not found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/story/{story-id}/panel/{panel-id}": {
+      "get": {
+        "summary": "Defines the gamemaster and gets a specific panel of a story",
+        "description": "Allows the gamemaster to retrieve a specific panel of the story by its ID",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster"]
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "panel-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "The specifc panel for the given story"
+          },
+          "404": {
+            "description": "Story not found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/invitation/{invitation-id}": {
+      "put": {
+        "summary": "Defines the user and puts the response to the invitation",
+        "description": "Allows the solver to accept or decline the gamemaster's invitation.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["solver", "gamemaster"]
+            }
+          },
+          {
+            "name": "invitation-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+         "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "from": {
+                    "type": "#/components/schemas/Gamemaster",
+                    "description": "The gamemaster who sent the invitation"
+                  },
+                  "to": {
+                    "type": "#/components/schemas/Solver",
+                    "description": "The solver who received the invitation"
+                  },
+                  "status": {
+                    "type": "boolean",
+                    "description": "Indicates if the invitation was accepted or declined",
+                    "enum": ["PENDING", "ACCEPTED", "DECLINED"]
+                },
+                "required": ["from", "to", "status"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Invitation response recorded successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Invitation not found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/story/{story-id}/riddle/{riddle-id}": {
+      "put": {
+        "summary": "Defines the user and puts the custom riddle to the story",
+        "description": "Allows the gamemaster to integrate the custom riddle to the story, after the custom riddle is created.",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["solver", "gamemaster"]
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "riddle-id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "id": {
+                    "type": "integer",
+                    "description": "Identifier for the custom riddle"
+                  },
+                  "riddle_type": {
+                    "type": "string",
+                    "description": "Type of the riddle",
+                    "enum": ["custom", "default", "database"]
+                  },
+                  "answered": {
+                    "type": "boolean",
+                    "description": "Indicates if the riddle has been answered"
+                  },
+                  "riddle_content": {
+                    "type": "string",
+                    "description": "Content of the riddle, which can be text."
+                  },
+                  "hints": {
+                    "type": "array",
+                    "items": {
+                      "type": "string"
+                    },
+                    "description": "Optional hints for the solver"
+                  }
+                },
+                "required": ["id", "riddle_type", "answered", "riddle_content"]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "Riddle updated successfully"
+          },
+          "400": {
+            "description": "Invalid input"
+          },
+          "404": {
+            "description": "Riddle or Story not found"
+          }
+        }
+      }
+    }
+  },
+    "/user/{id}/role/{role}/story/{story-id}/riddle": {
+      "post": {
+        "description": "FR22: The gamemaster must be able to create a custom riddle",
+        "operationId": "create_custom_riddle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "description": "User role (gamemaster, solver)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "description": "Story ID to which the riddle belongs",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Riddle object that is created",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Riddle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Riddle created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Riddle"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/answer/{answer-id}": {
+      "get": {
+        "description": "FR23: The gamemaster must be able to view the invited solvers' answers",
+        "operationId": "getAnswerText",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "description": "User role (gamemaster, solver)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
+            }
+          },
+          {
+            "name": "answer-id",
+            "in": "path",
+            "description": "ID of the answer to retrieve",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Answer found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "Answer not found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/answer": {
+      "get": {
+        "description": "FR23: The gamemaster must be able to view the invited solvers' answers",
+        "operationId": "getAnswerText",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "description": "User role (gamemaster, solver)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of answers",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Answer"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No answers found"
+          }
+        }
+      }
+    },
+    "/user/{id}/role/{role}/riddle": {
+      "get": {
+        "description": "FR24: The gamemaster must be able to request riddles from the Database",
+        "operationId": "request_riddles_from_database",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "path",
+            "description": "User role (gamemaster, solver)",
+            "required": true,
+            "schema": {
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of riddles retrieved from the database",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Riddle"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No riddles found"
+          }
+        }
+      }
+    }
+    }
+    
