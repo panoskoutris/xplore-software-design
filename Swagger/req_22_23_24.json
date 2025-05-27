@@ -2,14 +2,13 @@
   "paths": {
     "/user/{id}/role/{role}/story/{story-id}/riddle": {
       "post": {
-        "summary": "Create a custom riddle for a story",
-        "tags": [
-          "Riddle"
-        ],
+        "description": "FR22: The gamemaster must be able to create a custom riddle",
+        "operationId": "create_custom_riddle",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "User ID",
             "required": true,
             "schema": {
               "type": "integer"
@@ -18,14 +17,17 @@
           {
             "name": "role",
             "in": "path",
+            "description": "User role (gamemaster, solver)",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
             }
           },
           {
             "name": "story-id",
             "in": "path",
+            "description": "Story ID to which the riddle belongs",
             "required": true,
             "schema": {
               "type": "integer"
@@ -33,32 +35,43 @@
           }
         ],
         "requestBody": {
+          "description": "Riddle object that is created",
           "required": true,
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "Riddle"
+                "$ref": "#/components/schemas/Riddle"
               }
             }
           }
         },
         "responses": {
           "201": {
-            "description": "Riddle created successfully"
+            "description": "Riddle created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Riddle"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
           }
         }
       }
     },
+
     "/user/{id}/role/{role}/answer/{answer-id}": {
       "get": {
-        "summary": "Retrieve a specific answer",
-        "tags": [
-          "Answer"
-        ],
+        "description": "FR23: The gamemaster must be able to view the invited solvers' answers",
+        "operationId": "getAnswerText",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "User ID",
             "required": true,
             "schema": {
               "type": "integer"
@@ -67,14 +80,17 @@
           {
             "name": "role",
             "in": "path",
+            "description": "User role (gamemaster, solver)",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
             }
           },
           {
             "name": "answer-id",
             "in": "path",
+            "description": "ID of the answer to retrieve",
             "required": true,
             "schema": {
               "type": "integer"
@@ -87,7 +103,7 @@
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "Answer"
+                  "$ref": "#/components/schemas/Answer"
                 }
               }
             }
@@ -100,14 +116,13 @@
     },
     "/user/{id}/role/{role}/answer": {
       "get": {
-        "summary": "Get all answers by solvers",
-        "tags": [
-          "Answer"
-        ],
+        "description": "FR23: The gamemaster must be able to view the invited solvers' answers",
+        "operationId": "getAnswerText",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "User ID",
             "required": true,
             "schema": {
               "type": "integer"
@@ -116,9 +131,11 @@
           {
             "name": "role",
             "in": "path",
+            "description": "User role (gamemaster, solver)",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
             }
           }
         ],
@@ -130,7 +147,7 @@
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "Answer"
+                    "$ref": "#/components/schemas/Answer"
                   }
                 }
               }
@@ -144,14 +161,13 @@
     },
     "/user/{id}/role/{role}/riddle": {
       "get": {
-        "summary": "Get all riddles for the gamemaster",
-        "tags": [
-          "Riddle"
-        ],
+        "description": "FR24: The gamemaster must be able to request riddles from the Database",
+        "operationId": "request_riddles_from_database",
         "parameters": [
           {
             "name": "id",
             "in": "path",
+            "description": "User ID",
             "required": true,
             "schema": {
               "type": "integer"
@@ -160,21 +176,23 @@
           {
             "name": "role",
             "in": "path",
+            "description": "User role (gamemaster, solver)",
             "required": true,
             "schema": {
-              "type": "string"
+              "type": "string",
+              "enum": ["gamemaster", "solver"]
             }
           }
         ],
         "responses": {
           "200": {
-            "description": "List of riddles",
+            "description": "List of riddles retrieved from the database",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "Riddle"
+                    "$ref": "#/components/schemas/Riddle"
                   }
                 }
               }

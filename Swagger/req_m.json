@@ -1,4 +1,5 @@
-  "paths": {
+{
+    "paths": {
     "/user/{id}/role/{role}/story/{story-id}/panel": {
       "get": {
         "summary": "Defines the gamemaster and gets all panels of a story",
@@ -128,17 +129,17 @@
                 "type": "object",
                 "properties": {
                   "from": {
-                    "type": "Gamemaster",
+                    "type": "#/components/schemas/Gamemaster",
                     "description": "The gamemaster who sent the invitation"
                   },
                   "to": {
-                    "type": "Solver",
-                    "description": "The solver who received the invitation",
+                    "type": "#/components/schemas/Solver",
+                    "description": "The solver who received the invitation"
                   },
                   "status": {
                     "type": "boolean",
                     "description": "Indicates if the invitation was accepted or declined",
-                    "enum": [true, false]
+                    "enum": ["PENDING", "ACCEPTED", "DECLINED"]
                 },
                 "required": ["from", "to", "status"]
               }
@@ -248,4 +249,5 @@
       }
     }
   }
+}
 }

@@ -6,18 +6,18 @@
     "termsOfService": "https://swagger.io/terms/",
     "contact": {
       "name": "Xplore API Team",
-      "email": "xplore-team@auth.ece.gr"
-    },
+      "email": "xplore-team@ece.auth.gr"
+    }, 
     "license": {
       "name": "Apache 2.0",
       "url": "https://www.apache.org/licenses/LICENSE-2.0.html"
-    },
+    }, 
     "version": "1.0.0"
   },
   "externalDocs": {
     "description": "Learn more about the Swagger & OpenAPI Specification",
     "url": "https://swagger.io"
-  },
+  }, 
   "servers": [
     {
       "url": "http://localhost:3000/api",
@@ -51,10 +51,13 @@
             "description": "Indicates if the gamemaster account already exists."
           },
           "choosen_story": {
-            "type": "Story"
+            "type": "#/components/schemas/Story"
           },
           "invited_solvers": {
-            "type": "Solvers",
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Solver"
+            },
             "description": "List of solvers invited by the gamemaster"
           }
         },
@@ -78,14 +81,14 @@
           },
           "role": {
             "type": "string",
-            "enum": [ "solver"]
+            "enum": ["solver"]
           },
           "exists": {
             "type": "boolean",
             "description": "Indicates if the solver account already exists."
           },
           "choosen_story": {          
-              "type": "Story"
+              "type": "#/components/schemas/Story"
           },
           "invited": {
             "type": "boolean"
@@ -97,6 +100,7 @@
         },
       "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited", "used_hints"]
       },
+
       "Story": {
         "type": "object",
         "properties": {
@@ -123,8 +127,6 @@
           }
         },
         "required": ["id", "title", "chosen", "panels", "riddles"]
-
-
       },
       "Panel": {
         "type": "object",
@@ -139,8 +141,8 @@
         },
         "required": ["id", "content"]
     }
-
       },
+
       "Riddle": {
         "type": "object",
         "properties": {
@@ -150,7 +152,6 @@
           "riddle_type": {
             "type": "string",
             "enum": ["custom", "default", "database"]
-
           },
           "answered": {
             "type": "boolean"
@@ -173,10 +174,10 @@
             "type": "integer"
           },
           "riddle": {
-            "type": "Riddle"
+            "type": "#/components/schemas/Riddle"
           },
           "solver": {
-            "type": "SolverAccount"
+            "type": "#/components/schemas/SolverAccount"
           },
           "answerText": {
             "type": "string"
