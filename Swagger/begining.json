@@ -1,4 +1,4 @@
-  {
+{
   "openapi": "3.0.4",
   "info": {
     "title": "Swagger Xplore - OpenAPI 3.0",
@@ -26,37 +26,6 @@
   ],
   "components": {
     "schemas": {
-      "User": {
-        "type": "object",
-        "properties": {
-          "id": {
-            "type": "integer"
-          },
-          "name": {
-            "type": "string"
-          },
-          "password": {
-            "type": "string"
-          },
-          "email": {
-            "type": "string",
-            "format": "email"
-          },
-          "role": {
-            "type": "string",
-            "enum": ["gamemaster", "solver"]
-          },
-          "exists": {
-            "type": "boolean",
-            "description": "Indicates if the user account already exists."
-          },
-          "choosen_story": {
-            "type": "object",
-            "$ref": "#/components/schemas/Story"
-          }
-        },
-        "required": ["id", "name", "password", "email", "role", "exists"]
-      },
       "Gamemaster": {
         "type": "object",
         "properties": {
@@ -119,7 +88,7 @@
             "description": "Indicates if the solver account already exists."
           },
           "choosen_story": {          
-              "type": "#/components/schemas/Story"
+              "$ref": "#/components/schemas/Story"
           },
           "invited": {
             "type": "boolean"
@@ -171,9 +140,7 @@
           }
         },
         "required": ["id", "content"]
-    }
-      },
-
+    },
       "Riddle": {
         "type": "object",
         "properties": {
@@ -196,7 +163,6 @@
           }
         },
         "required": ["id", "riddle_type", "answered", "riddle_content"]
-
       },
       "Answer": {
         "type": "object",
@@ -205,10 +171,10 @@
             "type": "integer"
           },
           "riddle": {
-            "type": "#/components/schemas/Riddle"
+            "$ref": "#/components/schemas/Riddle"
           },
           "solver": {
-            "type": "#/components/schemas/SolverAccount"
+            "$ref": "#/components/schemas/SolverAccount"
           },
           "answerText": {
             "type": "string"
@@ -220,8 +186,9 @@
         "required": [
           "riddle",
           "solver",
-          "anwerText"
+          "answerText"
         ]
       }
+    }
     }
   }
