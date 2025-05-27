@@ -382,7 +382,8 @@
           }
         }
       }
-    },
+    }
+},
     "/user/{id}/role/{role}/story/{story-id}/riddle/{riddle-id}": {
       "put": {
         "summary": "Defines the user and puts the custom riddle to the story",
@@ -471,8 +472,7 @@
           }
         }
       }
-    }
-  },
+    },
     "/user/{id}/role/{role}/story/{story-id}/riddle": {
       "post": {
         "description": "FR22: The gamemaster must be able to create a custom riddle",
