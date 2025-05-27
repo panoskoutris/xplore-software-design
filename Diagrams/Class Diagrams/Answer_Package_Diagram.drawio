@@ -1,0 +1,92 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/136.0.0.0 Safari/537.36" version="26.3.0">
+  <diagram name="Page-1" id="j-rvxWLASnu9uTmVteeM">
+    <mxGraphModel dx="8771" dy="3260" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-1" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0;entryY=0.5;entryDx=0;entryDy=0;exitX=0;exitY=0;exitDx=160;exitDy=42;exitPerimeter=0;" edge="1" parent="1" source="AeI5IJSsaSHUT5S1S9Rn-22" target="AeI5IJSsaSHUT5S1S9Rn-3">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-6506.653" y="-2312.31" as="sourcePoint" />
+            <mxPoint x="-6273" y="-1998" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-2" value="" style="endArrow=open;endFill=1;endSize=12;html=1;rounded=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.459;exitY=1.067;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="AeI5IJSsaSHUT5S1S9Rn-5" target="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry width="160" relative="1" as="geometry">
+            <mxPoint x="-6193" y="-2412" as="sourcePoint" />
+            <mxPoint x="-6193" y="-2344" as="targetPoint" />
+            <Array as="points" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-3" value="&amp;lt;&amp;lt;Controller&amp;gt;&amp;gt;&lt;div&gt;AnswerController&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=39;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#FF6666;" vertex="1" parent="1">
+          <mxGeometry x="-6370" y="-2246" width="310" height="73" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-4" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-3">
+          <mxGeometry y="39" width="310" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-5" value="+check_answer(solver: SolverAccount): boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-3">
+          <mxGeometry y="47" width="310" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-6" value="&amp;lt;&amp;lt;Entity&amp;gt;&amp;gt;&lt;div&gt;Answer&lt;/div&gt;" style="swimlane;fontStyle=1;align=center;verticalAlign=top;childLayout=stackLayout;horizontal=1;startSize=46;horizontalStack=0;resizeParent=1;resizeParentMax=0;resizeLast=0;collapsible=1;marginBottom=0;whiteSpace=wrap;html=1;fillColor=#9AC7BF;" vertex="1" parent="1">
+          <mxGeometry x="-6353" y="-2126" width="250" height="392" as="geometry">
+            <mxRectangle x="-5247" y="-1075" width="93" height="46" as="alternateBounds" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-7" value="+solver: SolverAccount" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="46" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-8" value="+riddle: Riddle" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="72" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-9" value="+answerText: String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="98" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-10" value="+isCorrect: Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="124" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-11" value="" style="line;strokeWidth=1;fillColor=none;align=left;verticalAlign=middle;spacingTop=-1;spacingLeft=3;spacingRight=3;rotatable=0;labelPosition=right;points=[];portConstraint=eastwest;strokeColor=inherit;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="150" width="250" height="8" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-12" value="+Answer(): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="158" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-13" value="+getSolver(): SolverAccount" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="184" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-14" value="+setSolver(solver: SolverAccount): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="210" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-15" value="+getRiddle(): Riddle" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="236" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-16" value="+setRiddle(riddle: Riddle ):void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="262" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-17" value="+getAnswerText(): String" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="288" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-18" value="+setAnswerText(answerText: String): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="314" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-19" value="+getIsCorrect(): Boolean" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="340" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-20" value="+setIsCorrect(isCorrect: Boolean): void" style="text;strokeColor=none;fillColor=none;align=left;verticalAlign=top;spacingLeft=4;spacingRight=4;overflow=hidden;rotatable=0;points=[[0,0.5],[1,0.5]];portConstraint=eastwest;whiteSpace=wrap;html=1;" vertex="1" parent="AeI5IJSsaSHUT5S1S9Rn-6">
+          <mxGeometry y="366" width="250" height="26" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-21" value="" style="html=1;verticalAlign=bottom;labelBackgroundColor=none;endArrow=none;endFill=0;endSize=6;align=left;rounded=0;entryX=0;entryY=0;entryDx=0;entryDy=42;exitX=1;exitY=0.5;exitDx=0;exitDy=0;entryPerimeter=0;" edge="1" parent="1" source="AeI5IJSsaSHUT5S1S9Rn-5" target="AeI5IJSsaSHUT5S1S9Rn-23">
+          <mxGeometry x="-1" relative="1" as="geometry">
+            <mxPoint x="-6153" y="-2286" as="sourcePoint" />
+            <mxPoint x="-5555" y="-2507" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-22" value="Riddle Package" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-6573" y="-2246" width="160" height="70" as="geometry" />
+        </mxCell>
+        <mxCell id="AeI5IJSsaSHUT5S1S9Rn-23" value="SolverAccount Package" style="shape=folder;fontStyle=1;spacingTop=10;tabWidth=40;tabHeight=14;tabPosition=left;html=1;whiteSpace=wrap;" vertex="1" parent="1">
+          <mxGeometry x="-5993" y="-2226" width="160" height="70" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

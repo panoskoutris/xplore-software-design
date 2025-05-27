@@ -1,0 +1,282 @@
+<mxfile host="app.diagrams.net" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/135.0.0.0 Safari/537.36" version="27.0.1">
+  <diagram name="Σελίδα-1" id="qIHZ1D8KuirQCYNScGXu">
+    <mxGraphModel dx="512" dy="1779" grid="0" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="0" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="wILFVguwLSgpre8tk-Ho-1" value="" style="fillColor=#DEE8FF;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="50" y="-1140" width="1510" height="1050" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-2" value="" style="fillColor=#CCD5EB" vertex="1" parent="1">
+          <mxGeometry x="230" y="-990" width="1260" height="796.45" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-3" value="GameMaster" style="shape=umlActor;verticalLabelPosition=bottom;verticalAlign=top;html=1;" vertex="1" parent="1">
+          <mxGeometry x="100" y="-1095" width="30" height="60" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-4" value=":RiddleOptionDialog" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="290" y="-1090" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-5" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;entryX=-0.012;entryY=0.022;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.196;exitY=0.072;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" target="wILFVguwLSgpre8tk-Ho-43">
+          <mxGeometry x="220" y="92" width="100" height="100" as="geometry">
+            <mxPoint x="120.00000000000003" y="-945.8000000000001" as="sourcePoint" />
+            <mxPoint x="332.15000000000015" y="-945.8000000000001" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-6" value="choose_riddle_option()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-5">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-9" y="16" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-7" value="" style="edgeStyle=none;endArrow=none;dashed=1;entryX=0.601;entryY=0.008;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="wILFVguwLSgpre8tk-Ho-59">
+          <mxGeometry x="614.4878472222224" y="174.99999999999997" width="100" height="100" as="geometry">
+            <mxPoint x="341.88" y="-1040" as="sourcePoint" />
+            <mxPoint x="342" y="-1000" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-8" value=":RiddleController" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="430" y="-1090" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-9" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=0.975;exitY=0.08;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.058;entryY=0.046;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="220" y="92" width="100" height="100" as="geometry">
+            <mxPoint x="347.5" y="-930" as="sourcePoint" />
+            <mxPoint x="476.9200000000001" y="-929.18" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-10" value="[btnChooseDefault]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-9">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-3" y="-9" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-11" value="Choose a Riddle" style="rounded=1;fontStyle=1;fillColor=#FFD966;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="50" y="-1140" width="100" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-12" value=":ChooseDatabase&#xa;Riddle&#xa;Dialog" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="820" y="-1090" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-13" value="" style="edgeStyle=none;endArrow=none;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-12" target="wILFVguwLSgpre8tk-Ho-54">
+          <mxGeometry x="614.4878472222224" y="195" width="100" height="100" as="geometry">
+            <mxPoint x="690" y="-1010" as="sourcePoint" />
+            <mxPoint x="690.28" y="-940" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-14" value=":CreateRiddles &#xa;Dialog" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="962.5" y="-1090" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-15" value=":RiddleDBProxy" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="592.5" y="-1090" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-16" value=":Story" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="1102.5" y="-1090" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-17" value="" style="edgeStyle=none;endArrow=none;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-15" target="wILFVguwLSgpre8tk-Ho-55">
+          <mxGeometry x="624.4878472222224" y="195" width="100" height="100" as="geometry">
+            <mxPoint x="643" y="-1040" as="sourcePoint" />
+            <mxPoint x="645" y="-660" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-18" value="" style="edgeStyle=none;endArrow=none;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-49">
+          <mxGeometry x="284.4878472222224" y="1095" width="100" height="100" as="geometry">
+            <mxPoint x="1025" y="-1030" as="sourcePoint" />
+            <mxPoint x="1155" y="-120" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-19" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=1.03;exitY=0.075;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.095;entryY=0.032;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1">
+          <mxGeometry x="220" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="488.7499999999998" y="-910" as="sourcePoint" />
+            <mxPoint x="1149.9999999999998" y="-909.77" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-20" value="set_story()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-19">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-32" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-21" value="alt" style="rounded=1;fontStyle=1;fillColor=#FFD966;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="236.25" y="-979.9959896455595" width="53.75" height="28.49462365591398" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-22" value="&lt;b&gt;[Choose Default Riddle]&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1320" y="-979.9943010752688" width="160" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-23" value="&lt;b&gt;[Choose rIddle from the DB]&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1300" y="-779.998064516129" width="180" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-24" value="&lt;b&gt;[Custom Riddle]&lt;/b&gt;" style="text;html=1;align=center;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=#FFFFFF;" vertex="1" parent="1">
+          <mxGeometry x="1360" y="-429.99752688172043" width="120" height="30" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-25" value="" style="fillColor=#CC4125;strokeColor=#660000" vertex="1" parent="1">
+          <mxGeometry x="867.5" y="-603.8709677419355" width="10" height="79.78494623655915" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-26" value="" style="edgeStyle=none;endArrow=none;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-51">
+          <mxGeometry x="624.4878472222224" y="348.0645161290324" width="100" height="113.97849462365592" as="geometry">
+            <mxPoint x="810" y="-1048.3870967741937" as="sourcePoint" />
+            <mxPoint x="1015" y="-110" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-27" value="" style="fillColor=#CC4125;strokeColor=#660000" vertex="1" parent="1">
+          <mxGeometry x="640" y="-657.0408602150538" width="10" height="74.08602150537635" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-28" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;endArrow=none;startArrow=classic;dashed=1;entryX=0.079;entryY=0.628;entryDx=0;entryDy=0;entryPerimeter=0;exitX=0.939;exitY=0.927;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58">
+          <mxGeometry x="220" y="172.25887345679007" width="100" height="100" as="geometry">
+            <mxPoint x="475.1100000000001" y="-349.9999999999999" as="sourcePoint" />
+            <mxPoint x="1010" y="-346.9" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-29" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;endArrow=none;startArrow=classic;dashed=1;exitX=1.232;exitY=0.552;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.076;entryY=0.78;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58" target="wILFVguwLSgpre8tk-Ho-27">
+          <mxGeometry x="-120" y="1072.25887345679" width="100" height="100" as="geometry">
+            <mxPoint x="472" y="-603.87" as="sourcePoint" />
+            <mxPoint x="778" y="-603.87" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-30" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=1.005;exitY=0.605;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=#DAE8FC;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58">
+          <mxGeometry x="210" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="471.6099999999999" y="-564.8999999999996" as="sourcePoint" />
+            <mxPoint x="867.5" y="-563.05" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-31" value="show_riddles()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-30">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="37" y="-13" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-32" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=0.936;exitY=0.494;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58" target="wILFVguwLSgpre8tk-Ho-27">
+          <mxGeometry x="210" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="475.0899999999999" y="-634.2199999999999" as="sourcePoint" />
+            <mxPoint x="640" y="-635.7713978494623" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-33" value="&lt;font style=&quot;font-size: 8px;&quot;&gt;request_riddles_from_database()&lt;/font&gt;" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];rotation=0;" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-32">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-4" y="-14" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-34" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=1.27;exitY=0.352;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.07;entryY=0.362;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-43" target="wILFVguwLSgpre8tk-Ho-58">
+          <mxGeometry x="210" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="350" y="-729.8499999999999" as="sourcePoint" />
+            <mxPoint x="473.46000000000004" y="-730" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-35" value="[btnChooseDatabase]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-34">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-36" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=0.895;exitY=0.765;exitDx=0;exitDy=0;exitPerimeter=0;entryX=-0.058;entryY=0.854;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="wILFVguwLSgpre8tk-Ho-58">
+          <mxGeometry x="60" y="101" width="100" height="100" as="geometry">
+            <mxPoint x="343.75000000000006" y="-398.71000000000004" as="sourcePoint" />
+            <mxPoint x="468" y="-399" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-37" value="[btnCreateRiddles]" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-36">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-1" y="-11" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-38" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;entryX=0.237;entryY=0.022;entryDx=0;entryDy=0;entryPerimeter=0;exitX=1.194;exitY=0.718;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58">
+          <mxGeometry x="220" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="490" y="-490" as="sourcePoint" />
+            <mxPoint x="1150" y="-490" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-39" value="set_story()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-38">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-8" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-40" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=1.021;exitY=0.984;exitDx=0;exitDy=0;exitPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58">
+          <mxGeometry x="220" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="473" y="-310" as="sourcePoint" />
+            <mxPoint x="1150" y="-309.67999999999995" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-41" value="set_story()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-40">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-9" y="-10" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-42" value="" style="edgeStyle=none;endArrow=none;dashed=1;entryX=0.04;entryY=1;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="wILFVguwLSgpre8tk-Ho-1">
+          <mxGeometry x="614.4878472222224" y="174.99999999999997" width="100" height="100" as="geometry">
+            <mxPoint x="114.38000000000005" y="-1035" as="sourcePoint" />
+            <mxPoint x="114.66000000000003" y="-965" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-43" value="" style="fillColor=#CC4125;strokeColor=#660000" vertex="1" parent="1">
+          <mxGeometry x="337.5" y="-960" width="10" height="660" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-44" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;exitX=1.005;exitY=0.605;exitDx=0;exitDy=0;exitPerimeter=0;labelBackgroundColor=#DAE8FC;entryX=0;entryY=0.357;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" target="wILFVguwLSgpre8tk-Ho-53">
+          <mxGeometry x="210" y="112" width="100" height="100" as="geometry">
+            <mxPoint x="487.5" y="-370" as="sourcePoint" />
+            <mxPoint x="867" y="-368.05" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-45" value="create_custom_riddle()" style="edgeLabel;html=1;align=center;verticalAlign=middle;resizable=0;points=[];" connectable="0" vertex="1" parent="wILFVguwLSgpre8tk-Ho-44">
+          <mxGeometry relative="1" as="geometry">
+            <mxPoint x="-11" y="-12" as="offset" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-46" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0.002;exitY=0.69;exitDx=0;exitDy=0;entryX=0.999;entryY=0.691;entryDx=0;entryDy=0;entryPerimeter=0;exitPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-2" target="wILFVguwLSgpre8tk-Ho-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="630" y="-440" as="sourcePoint" />
+            <mxPoint x="1470" y="-440" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-47" value="" style="endArrow=none;dashed=1;html=1;dashPattern=1 3;strokeWidth=2;rounded=0;exitX=0;exitY=0.25;exitDx=0;exitDy=0;entryX=1;entryY=0.25;entryDx=0;entryDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-2" target="wILFVguwLSgpre8tk-Ho-2">
+          <mxGeometry width="50" height="50" relative="1" as="geometry">
+            <mxPoint x="244.5" y="-790" as="sourcePoint" />
+            <mxPoint x="1450" y="-790" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-48" value="" style="edgeStyle=none;endArrow=none;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-16" target="wILFVguwLSgpre8tk-Ho-49">
+          <mxGeometry x="284.4878472222224" y="1095" width="100" height="100" as="geometry">
+            <mxPoint x="1154.55" y="-1020" as="sourcePoint" />
+            <mxPoint x="1155" y="-180" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-49" value=":Story" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="1102.5" y="-160" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-50" value="" style="edgeStyle=none;endArrow=none;dashed=1;exitX=0.5;exitY=1;exitDx=0;exitDy=0;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-14" target="wILFVguwLSgpre8tk-Ho-51">
+          <mxGeometry x="624.4878472222224" y="348.0645161290324" width="100" height="113.97849462365592" as="geometry">
+            <mxPoint x="1015" y="-1040" as="sourcePoint" />
+            <mxPoint x="1015" y="-200" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-51" value=":CreateRiddles &#xa;Dialog" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="962.5" y="-160" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-52" value="" style="fillColor=#CC4125;strokeColor=#660000" vertex="1" parent="1">
+          <mxGeometry x="1150" y="-940" width="10" height="640" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-53" value="" style="fillColor=#CC4125;strokeColor=#660000" vertex="1" parent="1">
+          <mxGeometry x="1010" y="-387.3118279569892" width="10" height="56.98924731182796" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-54" value=":ChooseDatabase&#xa;Riddle&#xa;Dialog" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="820" y="-160" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-55" value=":RiddleDBProxy" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="592.5" y="-160" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-56" value="" style="edgeStyle=none;endArrow=none;dashed=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;exitX=0.5;exitY=1;exitDx=0;exitDy=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-8" target="wILFVguwLSgpre8tk-Ho-57">
+          <mxGeometry x="614.4878472222224" y="174.99999999999997" width="100" height="100" as="geometry">
+            <mxPoint x="483" y="-1040" as="sourcePoint" />
+            <mxPoint x="483" y="-87" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-57" value=":RiddleController" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="430" y="-160" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-58" value="" style="fillColor=#CC4125;strokeColor=#660000" vertex="1" parent="1">
+          <mxGeometry x="477.5" y="-970" width="10" height="670" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-59" value=":RiddleOptionDialog" style="shadow=1;fillColor=#A2C4C9;strokeColor=none" vertex="1" parent="1">
+          <mxGeometry x="280" y="-160" width="105" height="50" as="geometry" />
+        </mxCell>
+        <mxCell id="wILFVguwLSgpre8tk-Ho-60" value="" style="edgeStyle=none;verticalLabelPosition=top;verticalAlign=bottom;endArrow=none;startArrow=classic;dashed=1;exitX=0.843;exitY=0.642;exitDx=0;exitDy=0;exitPerimeter=0;entryX=0.168;entryY=0.826;entryDx=0;entryDy=0;entryPerimeter=0;" edge="1" parent="1" source="wILFVguwLSgpre8tk-Ho-58" target="wILFVguwLSgpre8tk-Ho-25">
+          <mxGeometry x="-120" y="1072.25887345679" width="100" height="100" as="geometry">
+            <mxPoint x="718.5" y="-540" as="sourcePoint" />
+            <mxPoint x="850" y="-530" as="targetPoint" />
+          </mxGeometry>
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>
