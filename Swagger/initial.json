@@ -224,10 +224,9 @@
       }
     },
 
-    "/user/{id}/role/{role}/story/{story-id}/panel": {
+    "/user/{id}/story/{story-id}/panel": {
       "get": {
-        "summary": "Defines the gamemaster and gets all panels of a story",
-        "description": "Enables the gamemaster to browse every panel of the story (Going back and forth through the story panels)",
+        "description": "FR27: The gamemaster must be able to browse every panel of the story(Going back and forth through the story panels)",
         "parameters": [
           {
             "name": "id",
@@ -239,7 +238,7 @@
           },
           {
             "name": "role",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string",
@@ -265,10 +264,9 @@
         }
       }
     },
-    "/user/{id}/role/{role}/story/{story-id}/panel/{panel-id}": {
+    "/user/{id}/story/{story-id}/panel/{panel-id}": {
       "get": {
-        "summary": "Defines the gamemaster and gets a specific panel of a story",
-        "description": "Allows the gamemaster to retrieve a specific panel of the story by its ID",
+        "description": "FR27: The gamemaster must be able to retrieve a specific panel of the story by its ID",
         "parameters": [
           {
             "name": "id",
@@ -280,7 +278,7 @@
           },
           {
             "name": "role",
-            "in": "path",
+            "in": "query",
             "required": true,
             "schema": {
               "type": "string",
@@ -314,10 +312,9 @@
         }
       }
     },
-    "/user/{id}/role/{role}/invitation/{invitation-id}": {
+    "/user/{id}/invitation/{invitation-id}": {
       "put": {
-        "summary": "Defines the user and puts the response to the invitation",
-        "description": "Allows the solver to accept or decline the gamemaster's invitation.",
+        "description": "FR29: The solver must be able to accept/decline the gamemaster's invitation",
         "parameters": [
           {
             "name": "id",
@@ -384,10 +381,9 @@
       }
     }
 },
-    "/user/{id}/role/{role}/story/{story-id}/riddle/{riddle-id}": {
+    "/user/{id}/story/{story-id}/riddle/{riddle-id}": {
       "put": {
-        "summary": "Defines the user and puts the custom riddle to the story",
-        "description": "Allows the gamemaster to integrate the custom riddle to the story, after the custom riddle is created.",
+        "description": "FR30: The gamemaster must be able to integrate the custom riddle to the story(After the custom riddle is created)",
         "parameters": [
           {
             "name": "id",
