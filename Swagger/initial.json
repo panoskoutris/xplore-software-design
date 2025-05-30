@@ -473,10 +473,9 @@
         }
       }
     },
-    "/user/{id}/role/{role}/story/{story-id}/riddle": {
+    "/user/{id}/story/{story-id}/riddle": {
       "post": {
         "description": "FR22: The gamemaster must be able to create a custom riddle",
-        "operationId": "create_custom_riddle",
         "parameters": [
           {
             "name": "id",
@@ -485,16 +484,6 @@
             "required": true,
             "schema": {
               "type": "integer"
-            }
-          },
-          {
-            "name": "role",
-            "in": "path",
-            "description": "User role (gamemaster, solver)",
-            "required": true,
-            "schema": {
-              "type": "string",
-              "enum": ["gamemaster", "solver"]
             }
           },
           {
@@ -513,7 +502,18 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/Riddle"
+                "type": "object",
+                "properties":{
+                  "role": {
+                    "type": "string",
+                    "enum": ["gamemaster"],
+                    "description": "User role (must be 'gamemaster' to create a riddle)"
+                  },
+                  "riddle": {
+                    "$ref": "#/components/schemas/Riddle"
+                  }
+                },
+                "required": ["role", "riddle"]
               }
             }
           }
@@ -535,10 +535,9 @@
         }
       }
     },
-    "/user/{id}/role/{role}/answer/{answer-id}": {
+    "/user/{id}/answer/{answer-id}": {
       "get": {
         "description": "FR23: The gamemaster must be able to view the invited solvers' answers",
-        "operationId": "getAnswerText",
         "parameters": [
           {
             "name": "id",
@@ -551,12 +550,12 @@
           },
           {
             "name": "role",
-            "in": "path",
-            "description": "User role (gamemaster, solver)",
+            "in": "query",
+            "description": "User role (must be gamemaster to view solvers' answers)",
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["gamemaster", "solver"]
+              "enum": ["gamemaster"]
             }
           },
           {
@@ -582,14 +581,16 @@
           },
           "404": {
             "description": "Answer not found"
+          },
+          "403": {
+            "description": "Forbidden: Only gamemaster can view answers"
           }
         }
       }
     },
-    "/user/{id}/role/{role}/answer": {
+    "/user/{id}/answer": {
       "get": {
         "description": "FR23: The gamemaster must be able to view the invited solvers' answers",
-        "operationId": "getAnswerText",
         "parameters": [
           {
             "name": "id",
@@ -602,12 +603,12 @@
           },
           {
             "name": "role",
-            "in": "path",
-            "description": "User role (gamemaster, solver)",
+            "in": "query",
+            "description": "User role (must be gamemaster to access answers list)",
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["gamemaster", "solver"]
+              "enum": ["gamemaster"]
             }
           }
         ],
@@ -627,14 +628,16 @@
           },
           "404": {
             "description": "No answers found"
+          },
+          "403": {
+            "description": "Forbidden: Only gamemaster can view answers"
           }
         }
       }
     },
-    "/user/{id}/role/{role}/riddle": {
+    "/user/{id}/riddle": {
       "get": {
         "description": "FR24: The gamemaster must be able to request riddles from the Database",
-        "operationId": "request_riddles_from_database",
         "parameters": [
           {
             "name": "id",
@@ -647,12 +650,12 @@
           },
           {
             "name": "role",
-            "in": "path",
-            "description": "User role (gamemaster, solver)",
+            "in": "query",
+            "description": "User role (must be gamemaster to access riddles)",
             "required": true,
             "schema": {
               "type": "string",
-              "enum": ["gamemaster", "solver"]
+              "enum": ["gamemaster"]
             }
           }
         ],
@@ -672,6 +675,9 @@
           },
           "404": {
             "description": "No riddles found"
+          },
+          "403": {
+            "description": "Forbidden: Only gamemaster can access riddles"
           }
         }
       }
