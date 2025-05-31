@@ -174,7 +174,7 @@
             "$ref": "#/components/schemas/Riddle"
           },
           "solver": {
-            "$ref": "#/components/schemas/SolverAccount"
+            "$ref": "#/components/schemas/Solver"
           },
           "answerText": {
             "type": "string"
@@ -188,7 +188,7 @@
           "solver",
           "answerText"
         ]
-      }
+      },
       "Hint": {
         "type": "object",
         "properties": {
@@ -205,7 +205,7 @@
             "type": "string"
           },
           "id": {
-            "type": "Integer"
+            "type": "integer"
           }
         },
         "required": [
@@ -213,7 +213,25 @@
           "hint_content",
           "id"
         ]
+      },
+      "Invitation": {
+        "type": "object",
+        "properties": {
+          "from": {
+            "$ref": "#/components/schemas/Gamemaster"
+          },
+          "to": {
+            "$ref": "#/components/schemas/Solver"
+          },
+          "status": {
+            "type": "string",
+            "description": "Indicates whether the Invitation has been accepted, rejected, or is still pending by the SolverAccount.",
+            "enum": ["PENDING", "ACCEPTED", "REJECTED"]
+          }
+        },
+        "required": ["from", "to", "status"]
       }
+
     }
     }
   }
