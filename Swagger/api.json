@@ -677,7 +677,213 @@
           }
         }
       }
+    },
+    "/user/{id}/story/{story-id}/panel/{panel-id}": {
+            "get": {
+                "description": "FR13: The solver must be able to view the story panel by panel",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "role",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "gamemaster"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "story-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "panel-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Panel retrieved",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Panel"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Panel not found"
+                    },
+                    "403": {
+                        "description": "Forbidden: Only gamemaster can view this Panel"
+                    }
+                }
+            }
+        },
+        "/answer/{answer-id}": {
+            "put": {
+                "description": "FR14: The system must check if the answer to the riddle is correct",
+                "responses": {
+                    "200": {
+                        "description": "Checked answer successfully"
+                    },
+                    "304": {
+                        "description": "Status of the Answer (correct or incorrect) is not modified"
+                    }
+                }
+            }
+        },
+        "/user/{id}/story/{story-id}/riddle/{riddle-id}/hint/{hint-id}": {
+            "get": {
+                "description": "FR17: The solver must be able to ask for a hint",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "role",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "gamemaster"
+                            ]
+                        }
+                    },
+                    {
+                        "name": "story-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "riddle-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "hint-id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Hint received",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Hint"
+                                }
+                            }
+                        }
+                    },
+                    "404": {
+                        "description": "Hint not found"
+                    }
+                }
+            }
+        },
+        "/user/{id}/invitation": {
+            "post": {
+                "description": "FR21: The gamemaster must be able to invite solvers",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "required": true,
+                        "schema": {
+                            "type": "integer"
+                        }
+                    },
+                    {
+                        "name": "role",
+                        "in": "query",
+                        "required": true,
+                        "schema": {
+                            "type": "string",
+                            "enum": [
+                                "gamemaster"
+                            ]
+                        }
+                    }
+                ],
+                "requestBody": {
+                    "description": "Invitation object is created",
+                    "required": true,
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "type": "object",
+                                "properties": {
+                                    "role": {
+                                        "type": "string",
+                                        "enum": [
+                                            "gamemaster"
+                                        ],
+                                        "description": "User role (must be 'gamemaster' to create an invitation)"
+                                    },
+                                    "Invitation": {
+                                        "$ref": "#/components/schemas/Invitation"
+                                    }
+                                },
+                                "required": [
+                                    "role",
+                                    "Invitation"
+                                ]
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "201": {
+                        "description": "Invitation created successfully",
+                        "content": {
+                            "application/json": {
+                                "schema": {
+                                    "$ref": "#/components/schemas/Invitation"
+                                }
+                            }
+                        }
+                    },
+                    "default": {
+                        "description": "Unexpected error"
+                    }
+                }
+            }
+        }
     }
-}
  }
     
