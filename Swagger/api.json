@@ -188,7 +188,57 @@
           "solver",
           "answerText"
         ]
-      }
+      },
+      "Hint": {
+                "type": "object",
+                "properties": {
+                    "answerId": {
+                        "type": "integer"
+                    },
+                    "riddle": {
+                        "$ref": "#/components/schemas/Riddle"
+                    },
+                    "accepted": {
+                        "type": "boolean"
+                    },
+                    "hint_content": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    }
+                },
+                "required": [
+                    "riddle",
+                    "hint_content",
+                    "id"
+                ]
+            },
+            "Invitation": {
+                "type": "object",
+                "properties": {
+                    "from": {
+                        "$ref": "#/components/schemas/Gamemaster"
+                    },
+                    "to": {
+                        "$ref": "#/components/schemas/Solver"
+                    },
+                    "status": {
+                        "type": "string",
+                        "description": "Indicates whether the Invitation has been accepted, rejected, or is still pending by the SolverAccount.",
+                        "enum": [
+                            "PENDING",
+                            "ACCEPTED",
+                            "REJECTED"
+                        ]
+                    }
+                },
+                "required": [
+                    "from",
+                    "to",
+                    "status"
+                ]
+            }
     }
     },
     "paths": {
