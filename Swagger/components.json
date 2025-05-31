@@ -1,9 +1,9 @@
 
-
+{
     "openapi": "3.0.4",
     "info": {
         "title": "Swagger Xplore - OpenAPI 3.0",
-        "description": "This is a sample API definition for the \"Xplore\" application, developed as part of a university project and based on the OpenAPI 3.0.4 specification.\n\nXplore is an educational storytelling Web Application. Making education fun through interactive learning (inspired by the bestselling graphic novel \"Ποιός σκότωσε τον κ. Χ;\").\n\nIn this version of the API, we follow a design-first approach and aim to cover key features and user stories identified during the early analysis and requirements phase.\n\nThis API enables:\n- The gamemaster to browse every panel of the story (Going back and forth through the story panels)\n- The solver to accept/decline the invitation quest made by the gamemaster\n- The gamemaster to integrate the custom riddle to the story, after the custom riddle is created\n\nOver time, we aim to enhance the functionality and structure of this API to support future extensions and improve usability.\n\nSome useful links:\n- [The Xplore App repository](https://github.com/dimileou/Software-Engineering-Project)\n- [The source API definition for the Xplore App](https://github.com/dimileou/Software-Engineering-Project/tree/main/Swagger)",
+        "description": "This is a sample API definition for the \"Xplore\" application, developed as part of a university project and based on the OpenAPI 3.0.4 specification.\n\nXplore is an educational storytelling Web Application. Making education fun through interactive learning (inspired by the bestselling graphic novel \"\u03a0\u03bf\u03b9\u03cc\u03c2 \u03c3\u03ba\u03cc\u03c4\u03c9\u03c3\u03b5 \u03c4\u03bf\u03bd \u03ba. \u03a7;\").\n\nIn this version of the API, we follow a design-first approach and aim to cover key features and user stories identified during the early analysis and requirements phase.\n\nThis API enables:\n- The gamemaster to browse every panel of the story (Going back and forth through the story panels)\n- The solver to accept/decline the invitation quest made by the gamemaster\n- The gamemaster to integrate the custom riddle to the story, after the custom riddle is created\n\nOver time, we aim to enhance the functionality and structure of this API to support future extensions and improve usability.\n\nSome useful links:\n- [The Xplore App repository](https://github.com/dimileou/Software-Engineering-Project)\n- [The source API definition for the Xplore App](https://github.com/dimileou/Software-Engineering-Project/tree/main/Swagger)",
         "termsOfService": "https://swagger.io/terms/",
         "contact": {
             "name": "Xplore API Team",
@@ -30,107 +30,256 @@
             "Gamemaster": {
                 "type": "object",
                 "properties": {
-                    "id": {"type": "integer"},
-                    "name": {"type": "string"},
-                    "password": {"type": "string"},
-                    "email": {"type": "string", "format": "email"},
-                    "role": {"type": "string", "enum": ["gamemaster"]},
-                    "exists": {"type": "boolean", "description": "Indicates if the gamemaster account already exists."},
-                    "choosen_story": {"$ref": "#/components/schemas/Story"},
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "gamemaster"
+                        ]
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "Indicates if the gamemaster account already exists."
+                    },
+                    "choosen_story": {
+                        "$ref": "#/components/schemas/Story"
+                    },
                     "invited_solvers": {
                         "type": "array",
-                        "items": {"$ref": "#/components/schemas/Solver"},
+                        "items": {
+                            "$ref": "#/components/schemas/Solver"
+                        },
                         "description": "List of solvers invited by the gamemaster"
                     }
                 },
-                "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited_solvers"]
+                "required": [
+                    "id",
+                    "name",
+                    "password",
+                    "email",
+                    "role",
+                    "exists",
+                    "choosen_story",
+                    "invited_solvers"
+                ]
             },
             "Solver": {
                 "type": "object",
                 "properties": {
-                    "id": {"type": "integer"},
-                    "name": {"type": "string"},
-                    "password": {"type": "string"},
-                    "email": {"type": "string", "format": "email"},
-                    "role": {"type": "string", "enum": ["solver"]},
-                    "exists": {"type": "boolean", "description": "Indicates if the solver account already exists."},
-                    "choosen_story": {"$ref": "#/components/schemas/Story"},
-                    "invited": {"type": "boolean"},
-                    "used_hints": {"type": "integer", "description": "Number of hints used by the solver"}
+                    "id": {
+                        "type": "integer"
+                    },
+                    "name": {
+                        "type": "string"
+                    },
+                    "password": {
+                        "type": "string"
+                    },
+                    "email": {
+                        "type": "string",
+                        "format": "email"
+                    },
+                    "role": {
+                        "type": "string",
+                        "enum": [
+                            "solver"
+                        ]
+                    },
+                    "exists": {
+                        "type": "boolean",
+                        "description": "Indicates if the solver account already exists."
+                    },
+                    "choosen_story": {
+                        "$ref": "#/components/schemas/Story"
+                    },
+                    "invited": {
+                        "type": "boolean"
+                    },
+                    "used_hints": {
+                        "type": "integer",
+                        "description": "Number of hints used by the solver"
+                    }
                 },
-                "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited", "used_hints"]
+                "required": [
+                    "id",
+                    "name",
+                    "password",
+                    "email",
+                    "role",
+                    "exists",
+                    "choosen_story",
+                    "invited",
+                    "used_hints"
+                ]
             },
             "Story": {
                 "type": "object",
                 "properties": {
-                    "id": {"type": "integer"},
-                    "title": {"type": "string"},
-                    "chosen": {"type": "boolean"},
+                    "id": {
+                        "type": "integer"
+                    },
+                    "title": {
+                        "type": "string"
+                    },
+                    "chosen": {
+                        "type": "boolean"
+                    },
                     "panels": {
                         "type": "array",
-                        "items": {"$ref": "#/components/schemas/Panel"}
+                        "items": {
+                            "$ref": "#/components/schemas/Panel"
+                        }
                     },
                     "riddles": {
                         "type": "array",
-                        "items": {"$ref": "#/components/schemas/Riddle"}
+                        "items": {
+                            "$ref": "#/components/schemas/Riddle"
+                        }
                     }
                 },
-                "required": ["id", "title", "chosen", "panels", "riddles"]
+                "required": [
+                    "id",
+                    "title",
+                    "chosen",
+                    "panels",
+                    "riddles"
+                ]
             },
             "Panel": {
                 "type": "object",
                 "properties": {
-                    "id": {"type": "integer"},
-                    "content": {"type": "string", "format": "binary"}
+                    "id": {
+                        "type": "integer"
+                    },
+                    "content": {
+                        "type": "string",
+                        "format": "binary"
+                    }
                 },
-                "required": ["id", "content"]
+                "required": [
+                    "id",
+                    "content"
+                ]
             },
             "Riddle": {
                 "type": "object",
                 "properties": {
-                    "id": {"type": "integer"},
-                    "riddle_type": {"type": "string", "enum": ["custom", "default", "database"]},
-                    "answered": {"type": "boolean"},
-                    "riddle_content": {"type": "string"},
-                    "correct_answer": {"type": "string", "description": "The correct answer to the riddle"}
+                    "id": {
+                        "type": "integer"
+                    },
+                    "riddle_type": {
+                        "type": "string",
+                        "enum": [
+                            "custom",
+                            "default",
+                            "database"
+                        ]
+                    },
+                    "answered": {
+                        "type": "boolean"
+                    },
+                    "riddle_content": {
+                        "type": "string"
+                    },
+                    "correct_answer": {
+                        "type": "string",
+                        "description": "The correct answer to the riddle"
+                    }
                 },
-                "required": ["id", "riddle_type", "answered", "riddle_content"]
+                "required": [
+                    "id",
+                    "riddle_type",
+                    "answered",
+                    "riddle_content"
+                ]
             },
             "Answer": {
                 "type": "object",
                 "properties": {
-                    "answerId": {"type": "integer"},
-                    "riddle": {"$ref": "#/components/schemas/Riddle"},
-                    "solver": {"$ref": "#/components/schemas/Solver"},
-                    "answerText": {"type": "string"},
-                    "isCorrect": {"type": "boolean"}
+                    "answerId": {
+                        "type": "integer"
+                    },
+                    "riddle": {
+                        "$ref": "#/components/schemas/Riddle"
+                    },
+                    "solver": {
+                        "$ref": "#/components/schemas/Solver"
+                    },
+                    "answerText": {
+                        "type": "string"
+                    },
+                    "isCorrect": {
+                        "type": "boolean"
+                    }
                 },
-                "required": ["riddle", "solver", "answerText"]
+                "required": [
+                    "riddle",
+                    "solver",
+                    "answerText"
+                ]
             },
             "Hint": {
                 "type": "object",
                 "properties": {
-                    "answerId": {"type": "integer"},
-                    "riddle": {"$ref": "#/components/schemas/Riddle"},
-                    "accepted": {"type": "boolean"},
-                    "hint_content": {"type": "string"},
-                    "id": {"type": "integer"}
+                    "answerId": {
+                        "type": "integer"
+                    },
+                    "riddle": {
+                        "$ref": "#/components/schemas/Riddle"
+                    },
+                    "accepted": {
+                        "type": "boolean"
+                    },
+                    "hint_content": {
+                        "type": "string"
+                    },
+                    "id": {
+                        "type": "integer"
+                    }
                 },
-                "required": ["riddle", "hint_content", "id"]
+                "required": [
+                    "riddle",
+                    "hint_content",
+                    "id"
+                ]
             },
             "Invitation": {
                 "type": "object",
                 "properties": {
-                    "from": {"$ref": "#/components/schemas/Gamemaster"},
-                    "to": {"$ref": "#/components/schemas/Solver"},
+                    "from": {
+                        "$ref": "#/components/schemas/Gamemaster"
+                    },
+                    "to": {
+                        "$ref": "#/components/schemas/Solver"
+                    },
                     "status": {
                         "type": "string",
                         "description": "Indicates whether the Invitation has been accepted, rejected, or is still pending by the SolverAccount.",
-                        "enum": ["PENDING", "ACCEPTED", "REJECTED"]
+                        "enum": [
+                            "PENDING",
+                            "ACCEPTED",
+                            "REJECTED"
+                        ]
                     }
                 },
-                "required": ["from", "to", "status"]
+                "required": [
+                    "from",
+                    "to",
+                    "status"
+                ]
             }
         }
     }
-
+}
