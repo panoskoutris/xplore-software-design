@@ -189,6 +189,31 @@
           "answerText"
         ]
       }
+      "Hint": {
+        "type": "object",
+        "properties": {
+          "answerId": {
+            "type": "integer"
+          },
+          "riddle": {
+            "$ref": "#/components/schemas/Riddle"
+          },
+          "accepted": {
+            "type": "boolean"
+          },
+          "hint_content": {
+            "type": "string"
+          },
+          "id": {
+            "type": "Integer"
+          }
+        },
+        "required": [
+          "riddle",
+          "hint_content",
+          "id"
+        ]
+      }
     }
     }
   }
