@@ -362,7 +362,7 @@
                     "description": "Indicates if the invitation was accepted or declined",
                     "enum": ["PENDING", "ACCEPTED", "DECLINED"]
                 },
-                "required": ["from", "to", "status"]
+                "required": ["role", "from", "to", "status"]
               }
             }
           }
@@ -451,7 +451,7 @@
                     "description": "Optional hints for the solver"
                   }
                 },
-                "required": ["id", "riddle_type", "answered", "riddle_content"]
+                "required": ["id", "role", "riddle_type", "answered", "riddle_content"]
               }
             }
           }
