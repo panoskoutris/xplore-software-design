@@ -728,6 +728,233 @@
         }
       }
     },
+    "/user/{id}/story": {
+      "get": {
+        "description": "FR11: The user must be able to choose the desired story",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "User role, either solver or gamemaster",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "gamemaster",
+                "solver"
+              ]
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "List of stories",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Story"
+                  }
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No stories found"
+          }
+        }
+      }
+    },
+    "/user/{id}/story/{story-id}": {
+      "get": {
+        "description": "FR11: The user must be able to choose the desired story",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "role",
+            "in": "query",
+            "description": "User role, either solver or gamemaster",
+            "required": false,
+            "schema": {
+              "type": "string",
+              "enum": [
+                "gamemaster",
+                "solver"
+              ]
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "description": "Story ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Story found",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Story"
+                }
+              }
+            }
+          },
+          "404": {
+            "description": "No stories found"
+          }
+        }
+      }
+    },
+    "/user/{id}/story/{story-id}/riddle/{riddle-id}/answer": {
+      "post": {
+        "description": "FR12: The solver must be able to submit an answer to the riddle",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "story-id",
+            "in": "path",
+            "description": "Story ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          },
+          {
+            "name": "riddle-id",
+            "in": "path",
+            "description": "Riddle ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Answer object that is created",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "solver"
+                    ],
+                    "description": "User role (must be 'solver' to submit answer to the riddle)"
+                  },
+                  "answer": {
+                    "$ref": "#/components/schemas/Answer"
+                  }
+                },
+                "required": [
+                  "role",
+                  "answer"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "201": {
+            "description": "Answer created successfully",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Answer"
+                }
+              }
+            }
+          },
+          "default": {
+            "description": "Unexpected error"
+          }
+        }
+      }
+    },
+    "/user/{id}": {
+      "put": {
+        "description": "FR10: The user must be able to choose their role",
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "description": "User ID",
+            "required": true,
+            "schema": {
+              "type": "integer"
+            }
+          }
+        ],
+        "requestBody": {
+          "description": "Role selection for the user",
+          "required": true,
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "properties": {
+                  "role": {
+                    "type": "string",
+                    "enum": [
+                      "gamemaster",
+                      "solver"
+                    ],
+                    "description": "User role to assign"
+                  }
+                },
+                "required": [
+                  "role"
+                ]
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "User role updated successfully"
+          },
+          "400": {
+            "description": "Invalid role or input"
+          },
+          "404": {
+            "description": "User not found"
+          }
+        }
+      }
+    },
     "/user/{id}/story/{story-id}/panel/{panel-id}": {
             "get": {
                 "description": "FR13: The solver must be able to view the story panel by panel",
