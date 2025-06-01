@@ -32,7 +32,7 @@
           "id": {
             "type": "integer"
           },
-          "name": {
+          "name": { 
             "type": "string"
           },
           "password": {
@@ -100,7 +100,6 @@
         },
       "required": ["id", "name", "password", "email", "role", "exists", "choosen_story", "invited", "used_hints"]
       },
-
       "Story": {
         "type": "object",
         "properties": {
@@ -140,7 +139,7 @@
           }
         },
         "required": ["id", "content"]
-    },
+      },
       "Riddle": {
         "type": "object",
         "properties": {
@@ -190,56 +189,56 @@
         ]
       },
       "Hint": {
-                "type": "object",
-                "properties": {
-                    "answerId": {
-                        "type": "integer"
-                    },
-                    "riddle": {
-                        "$ref": "#/components/schemas/Riddle"
-                    },
-                    "accepted": {
-                        "type": "boolean"
-                    },
-                    "hint_content": {
-                        "type": "string"
-                    },
-                    "id": {
-                        "type": "integer"
-                    }
-                },
-                "required": [
-                    "riddle",
-                    "hint_content",
-                    "id"
-                ]
+        "type": "object",
+        "properties": {
+            "answerId": {
+                "type": "integer"
             },
-            "Invitation": {
-                "type": "object",
-                "properties": {
-                    "from": {
-                        "$ref": "#/components/schemas/Gamemaster"
-                    },
-                    "to": {
-                        "$ref": "#/components/schemas/Solver"
-                    },
-                    "status": {
-                        "type": "string",
-                        "description": "Indicates whether the Invitation has been accepted, rejected, or is still pending by the SolverAccount.",
-                        "enum": [
-                            "PENDING",
-                            "ACCEPTED",
-                            "REJECTED"
-                        ]
-                    }
-                },
-                "required": [
-                    "from",
-                    "to",
-                    "status"
+            "riddle": {
+                "$ref": "#/components/schemas/Riddle"
+            },
+            "accepted": {
+                "type": "boolean"
+            },
+            "hint_content": {
+                "type": "string"
+            },
+            "id": {
+                "type": "integer"
+            }
+        },
+        "required": [
+            "riddle",
+            "hint_content",
+            "id"
+        ]
+      },
+      "Invitation": {
+        "type": "object",
+        "properties": {
+            "from": {
+                "$ref": "#/components/schemas/Gamemaster"
+            },
+            "to": {
+                "$ref": "#/components/schemas/Solver"
+            },
+            "status": {
+                "type": "string",
+                "description": "Indicates whether the Invitation has been accepted, rejected, or is still pending by the SolverAccount.",
+                "enum": [
+                    "PENDING",
+                    "ACCEPTED",
+                    "REJECTED"
                 ]
             }
-    }
+        },
+        "required": [
+            "from",
+            "to",
+            "status"
+        ]
+      }
+     }
     },
     "paths": {
     "/user": {
@@ -273,7 +272,6 @@
         }
       }
     },
-
     "/user/{id}/story/{story-id}/panel": {
       "get": {
         "description": "FR27: The gamemaster must be able to browse every panel of the story(Going back and forth through the story panels)",
@@ -429,8 +427,8 @@
           }
         }
       }
-    }
-},
+     }
+    },
     "/user/{id}/story/{story-id}/riddle/{riddle-id}": {
       "put": {
         "description": "FR30: The gamemaster must be able to integrate the custom riddle to the story(After the custom riddle is created)",
@@ -1014,8 +1012,8 @@
                     }
                 }
             }
-        },
-        "/answer/{answer-id}": {
+    },
+    "/answer/{answer-id}": {
             "put": {
                 "description": "FR14: The system must check if the answer to the riddle is correct",
                 "responses": {
@@ -1027,8 +1025,8 @@
                     }
                 }
             }
-        },
-        "/user/{id}/story/{story-id}/riddle/{riddle-id}/hint/{hint-id}": {
+    },
+    "/user/{id}/story/{story-id}/riddle/{riddle-id}/hint/{hint-id}": {
             "get": {
                 "description": "FR17: The solver must be able to ask for a hint",
                 "parameters": [
@@ -1092,8 +1090,8 @@
                     }
                 }
             }
-        },
-        "/user/{id}/invitation": {
+    },
+    "/user/{id}/invitation": {
             "post": {
                 "description": "FR21: The gamemaster must be able to invite solvers",
                 "parameters": [
