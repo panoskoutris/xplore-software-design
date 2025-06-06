@@ -1,6 +1,6 @@
 ﻿# 🧩 Xplore Web Application - Software Engineering Project
 <p align="center">
-  <img src=".\Mockups\APP_LOGO.png" alt="Xplore Logo" width="200"/>
+  <img src=".\Mockups\Xplore_logo.png" alt="Xplore Logo" width="200"/>
 </p>
 
 ## 📚 Overview
