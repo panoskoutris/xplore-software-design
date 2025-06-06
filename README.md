@@ -46,23 +46,14 @@ The development of the project followed a structured process organized in **thre
 ## 📂 Repository Structure
 ```
 ├── Descriptions/ 
-
 │ ├── EBC/
-
 │ ├── Requirements/
-
 ├── Diagrams/
-
 │ ├── ActivityDiagrams/
-
 │ ├── ClassDiagrams/
-
 ├── Swagger/
-
-│ ├── begining.json
-
-│ └── initial.json
-
+│ ├── api.json
+│ └── comonents.json
 └── README.md
 ```
 
