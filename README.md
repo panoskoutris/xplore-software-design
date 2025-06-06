@@ -91,7 +91,6 @@ The full OpenAPI spec is defined in [`initial.json`](./initial.json), describing
 ## ✍️ Authors
 
 - Team: Xplore API Team
-- Contact: `xplore-team@ece.auth.gr`
 
 ---
 
