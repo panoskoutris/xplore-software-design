@@ -44,7 +44,7 @@ The development of the project followed a structured process organized in **thre
 ---
 
 ## 📂 Repository Structure
-`
+```
 ├── Descriptions/ 
 
 │ ├── EBC/
@@ -64,7 +64,7 @@ The development of the project followed a structured process organized in **thre
 │ └── initial.json
 
 └── README.md
-`
+```
 
 ---
 
