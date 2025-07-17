@@ -46,26 +46,67 @@ The development of the project followed a structured process organized in **thre
 ## 📂 Repository Structure
 ```
 xplore-software-design/
-├── Diagrams/                 # All UML diagrams grouped by type
-│   ├── Activity Diagrams/
-│   ├── Class Diagrams/
-│   ├── Design Patterns/
-│   ├── Sequence Diagrams/
-│   └── Use Case Diagrams/
+├── diagrams/                             # All UML and structural diagrams
+│   ├── activity-diagrams/
+│   │   ├── attempt-riddle.png
+│   │   ├── choose-riddle.png
+│   │   └── enter-storyline.png
+│   │
+│   ├── class-diagrams/
+│   │   ├── account-package.png
+│   │   ├── answer-package.png
+│   │   ├── full-class-diagram.png
+│   │   ├── full-collapsed-class-diagram.png
+│   │   ├── hint-package.png
+│   │   ├── invitation-package.png
+│   │   ├── riddle-package.png
+│   │   ├── solver-account-package.png
+│   │   └── story-package.png
+│   │
+│   ├── design-patterns/
+│   │   ├── bridge.png
+│   │   └── proxy.png
+│   │
+│   ├── sequence-diagrams/
+│   │   ├── attempt-riddle.png
+│   │   ├── choose-riddle.png
+│   │   └── enter-storyline.png
+│   │
+│   └── use-case-diagrams/
+│       └── use-case-diagram.png
 │
-├── Mockups/                 # UI mockup images (login, navigation, etc.)
-│   └── *.png
+├── mockups/                             # UI mockups for key user actions
+│   ├── accept-invitation.png
+│   ├── answer-riddle-incorrectly.png
+│   ├── answer-riddle.png
+│   ├── app-logo.png
+│   ├── choose-database-riddle-1.png
+│   ├── choose-database-riddle-2.png
+│   ├── choose-role.png
+│   ├── choose-story.png
+│   ├── congrats.png
+│   ├── create-riddles.png
+│   ├── final-story.png
+│   ├── hint-page.png
+│   ├── homepage-gamemaster.png
+│   ├── homepage-solver.png
+│   ├── log-in.png
+│   ├── riddle-options.png
+│   ├── sign-up.png
+│   ├── story-panel.png
+│   └── xplore-logo.png
 │
-├── Swagger/                 # Design-First API (OpenAPI 3.0.4) specification
+├── swagger/                             # Design-First API specification
 │   ├── api.json
 │   └── components.json
 │
-├── User Stories/            # User stories in Gherkin-style feature files
+├── user-stories/                        # Gherkin-style user story features
 │   ├── attempt_riddle.feature
 │   ├── choose_riddle.feature
 │   └── enter_story.feature
 │
 └── README.md
+
 
 ```
 
