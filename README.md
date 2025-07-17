@@ -45,16 +45,28 @@ The development of the project followed a structured process organized in **thre
 
 ## 📂 Repository Structure
 ```
-├── Descriptions/ 
-│ ├── EBC/
-│ ├── Requirements/
-├── Diagrams/
-│ ├── ActivityDiagrams/
-│ ├── ClassDiagrams/
-├── Swagger/
-│ ├── api.json
-│ └── comonents.json
+xplore-software-design/
+├── Diagrams/                 # All UML diagrams grouped by type
+│   ├── Activity Diagrams/
+│   ├── Class Diagrams/
+│   ├── Design Patterns/
+│   ├── Sequence Diagrams/
+│   └── Use Case Diagrams/
+│
+├── Mockups/                 # UI mockup images (login, navigation, etc.)
+│   └── *.png
+│
+├── Swagger/                 # Design-First API (OpenAPI 3.0.4) specification
+│   ├── api.json
+│   └── components.json
+│
+├── User Stories/            # User stories in Gherkin-style feature files
+│   ├── attempt_riddle.feature
+│   ├── choose_riddle.feature
+│   └── enter_story.feature
+│
 └── README.md
+
 ```
 
 ---
