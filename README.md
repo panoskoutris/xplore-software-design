@@ -1,4 +1,4 @@
-﻿# 🧩 Xplore Web Application - Software Engineering Project
+﻿# 🧩 Xplore Web Application - Software Design
 <p align="center">
   <img src=".\Mockups\Xplore_logo.png" alt="Xplore Logo" width="200"/>
 </p>
