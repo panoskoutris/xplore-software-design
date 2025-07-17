@@ -69,13 +69,6 @@ The full OpenAPI spec is defined in [`initial.json`](./initial.json), describing
 - `POST /user/{id}/story/{story-id}/riddle`: Add custom riddles
 - `GET /user/{id}/answer`: Retrieve answers by solvers
 
----
-
-## 🔗 Useful Links
-
-- 📁 [GitHub Repo](https://github.com/dimileou/Software-Engineering-Project)
-- 📜 [Swagger Documentation](https://github.com/dimileou/Software-Engineering-Project/tree/main/Swagger)
-- 📘 [Learn Swagger](https://swagger.io)
 
 ---
 
