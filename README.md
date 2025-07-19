@@ -5,7 +5,7 @@
 
 ## 📚 Overview
 
-**Xplore** is an educational storytelling web application developed as part of aν ΑUTH university course on Software Engineering. Inspired by the graphic novel *"Ποιός σκότωσε τον κ. Χ;"*, the platform allows interactive learning through stories, riddles, and character-driven progress.
+**Xplore** is an educational storytelling web application developed as part of the **Software Engineering I** course  . Inspired by the graphic novel *"Ποιός σκότωσε τον κ. Χ;"*, the platform allows interactive learning through stories, riddles, and character-driven progress.
 
 The project follows a **Design-First API** approach and adheres to the **OpenAPI 3.0.4 specification**.
 
