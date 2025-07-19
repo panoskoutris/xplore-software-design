@@ -1,6 +1,6 @@
 ﻿# 🧩 Xplore Web Application - Software Design
 <p align="center">
-  <img src=".\Mockups\xplore-logo.png" alt="xplore-logo" width="200"/>
+  <img src=".\mockups\xplore-logo.png" alt="xplore-logo" width="200"/>
 </p>
 
 ## 📚 Overview
